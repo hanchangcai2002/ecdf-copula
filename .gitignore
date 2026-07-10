@@ -1,0 +1,12 @@
+# Raw clinical data — not public, see README "Data availability" note.
+# Kept locally for reproducing the pipeline, excluded from version control.
+data/raw/
+
+# OS / editor junk
+.DS_Store
+.Rproj.user/
+.Rhistory
+.RData
+.ipynb_checkpoints/
+__pycache__/
+*.pyc

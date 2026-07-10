@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Hernandez"
+  given-names: "Mikel"
+  orcid: "https://orcid.org/0000-0002-4470-9674"
+- family-names: "Epelde"
+  given-names: "Gorka"
+  orcid: "https://orcid.org/0000-0002-5179-415X"
+- family-names: "Alberdi"
+  given-names: "Ane"
+  orcid: "https://orcid.org/0000-0003-2754-0632"
+- family-names: "Cilla"
+  given-names: "Rodrigo"
+  orcid: "https://orcid.org/0000-0003-4303-8335"
+- family-names: "Rankin"
+  given-names: "Debbie"
+  orcid: "https://orcid.org/0000-0003-2110-0599"
+title: "Synthetic Tabular Data Evaluation in the Health Domain Covering Resemblance, Utility, and Privacy Dimensions"
+doi: 10.1055/s-0042-1760247
+version: 1.0.0
+url: "https://github.com/Vicomtech/STDG-evaluation-metrics"
