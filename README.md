@@ -2,20 +2,12 @@
 
 Code, intermediate data, and evaluation notebooks for:
 
-> Cai H, Yu W, Lu R, Chattopadhyay I, Zhang X, Liu J. *Synthetic Longitudinal
-> Tabular Data Generation via Copula.* Biostatistics (in press).
+> Cai H, Yu W, Lu R, Chattopadhyay I, Zhang X, Liu J. Synthetic Longitudinal Tabular Data Generation via Copula
 
-The eCDF-copula method combines the empirical CDF (marginals) with a Gaussian
-copula (dependence structure) to synthesize longitudinal tabular health data,
-preserving within- and between-visit correlation. It is benchmarked against
-Gaussian Multivariate (GM), SDV/PAR, CTGAN, and WGAN-GP on two datasets:
+The eCDF-copula method combines the empirical CDF (marginals) with a Gaussian copula (dependence structure) to synthesize longitudinal tabular health data, preserving within- and between-visit correlation. It is benchmarked against Gaussian Multivariate (GM), SDV/PAR, CTGAN, and WGAN-GP on two datasets:
 
-- **Dataset A — REMBRANDT**: n=120, 28 longitudinal variables (MADRS + HARS
-  scores across 14 visits). Imputed and synthesized **once**.
-- **Dataset B — CHAP**: n=3,612, 20 features (10 binned SBP + 10 binned DBP
-  values across pregnancy). Imputed **M=5** times, with **L=10** synthetic
-  replicates drawn per imputation (50-dataset ensemble), enabling the
-  imputation-vs-synthesis variance decomposition in Figure 7.
+- **Dataset A — REMBRANDT**: n=120, 28 longitudinal variables (MADRS + HARS scores across 14 visits). Imputed and synthesized **once**.
+- **Dataset B — CHAP**: n=3,612, 20 features (10 binned SBP + 10 binned DBP values across pregnancy). Imputed **M=5** times, with **L=10** synthetic replicates drawn per imputation (50-dataset ensemble).
 
 ## Repository structure
 
@@ -66,23 +58,10 @@ results/                Evaluation notebooks (.ipynb) and their output
 
 ## Data availability
 
-`data/raw/` contains the imputed REMBRANDT and CHAP patient data used to fit
-the synthesizers. **This folder is excluded from version control (see
-`.gitignore`) and is not part of the public repository** — it exists only in
-the local copy of this project, since the underlying clinical data cannot be
-shared publicly. Everything else (synthesis/imputation/evaluation code, the
-synthetic datasets in `data/processed/`, and all evaluation results) is
-public. Scripts that read from `data/raw/` will not run out of the box for
-external users without access to the original REMBRANDT/CHAP data.
+`data/raw/` contains the imputed REMBRANDT and CHAP patient data used to fit the synthesizers. **This folder is excluded from version control (see `.gitignore`) and is not part of the public repository**. The original dataset exists only in the local copy of this project, since the underlying clinical data cannot be shared publicly. Everything else (synthesis/imputation/evaluation code, the synthetic datasets in `data/processed/`, and all evaluation results) is public. Scripts that read from `data/raw/` will not run out of the box for external users without access to the original REMBRANDT/CHAP data.
 
 ## Notes
 
-- **Third-party code**: `functions/evaluation_functions/` vendors evaluation
-  code from Hernandez et al. (2023) (MIT license). See
-  `functions/evaluation_functions/NOTICE.md` for attribution.
-- Notebooks use relative paths (`FUNCTIONS_HOME`, `REAL_DATA_HOME`,
-  `SYN_DATA_HOME`) computed from each notebook's location — run them in place
-  (don't move a notebook without updating these).
-- GAN-based generation (CTGAN, WGAN-GP) requires Python (`ctgan`, `sdv`,
-  `ydata-synthetic`); the eCDF-copula method and GBMT clustering require R
-  (`copula`, `mice`, `gbmt`, `mclust`, `tidyverse`).
+- **Third-party code**: `functions/evaluation_functions/` vendors evaluation code from Hernandez et al. (2023) (MIT license). See `functions/evaluation_functions/NOTICE.md` for attribution.
+- Notebooks use relative paths (`FUNCTIONS_HOME`, `REAL_DATA_HOME`, `SYN_DATA_HOME`) computed from each notebook's location — run them in place (don't move a notebook without updating these).
+- GAN-based generation (CTGAN, WGAN-GP) requires Python (`ctgan`, `sdv`, `ydata-synthetic`); the eCDF-copula method and GBMT clustering require R (`copula`, `mice`, `gbmt`, `mclust`, `tidyverse`).
